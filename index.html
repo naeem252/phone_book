@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Phone Book</title>
+    <style>
+        li a{
+            color:#444;
+        }
+        li a#edit{
+           margin-right: 1rem;
+        }
+        li a#favorite{
+            color: rgba(68, 68, 68, 0.49);
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        li a#favorite:hover{
+            color: #ffb05b;
+        }
+        li.c-active a#favorite{
+            color: #ffb05b;
+        }
+        ul#list-heading{
+            display: none;
+        }
+        input#edit-item{
+            display: none;
+        }
+        #message{
+            transition: .5s ease-out;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1rem;
+
+            text-transform: capitalize;
+            top: -30%;
+
+            z-index: 100;
+            border-radius: 5px;
+            box-shadow: inset 1px 1px 10px #b3b3b3;
+            letter-spacing: 1px;
+            color: #444444;
+        }
+        #message.added{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<div id="message">
+    you favorited naeem hasan
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="display-4">
+                Contact List
+            </h2>
+
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="number" placeholder="number" class="form-control">
+                </div>
+                <input type="submit" class="btn btn-info" id="add-item" value="Add">
+                <input type="submit" class="btn btn-secondary" id="edit-item" value="Update">
+            </form>
+        </div>
+        <div class="card-body">
+            <h2 class="display-4 text-capitalize">
+                All contact
+            </h2>
+            <ul class="list-group" id="list-heading">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>Name</strong>
+                    <strong>Number</strong>
+                    <strong></strong>
+                </li>
+            </ul>
+            <div id="all-list">
+            </div>
+        </div>
+        <div class="card-footer">
+            <p class="lead text-center">
+                created by naeem hasan
+            </p>
+        </div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
