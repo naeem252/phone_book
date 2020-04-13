@@ -275,13 +275,18 @@ const UICtrl = (function () {
                     item.querySelector('.number').textContent = number;
                 }
             });
+
+            message(`you updated ${name} to the list`,'updated');
         },
         deleteItem: function (li) {
             if (li.parentElement.children.length === 1) {
                 //hide list heading
                 document.querySelector(allSelectorsIds.listHeading).style.display = "none";
             }
+            const name=li.querySelector('.name').childNodes[0].textContent;
             li.remove();
+
+            message(`you deleted ${name} to the list`,'deleted');
         },
         //return all selector to the app controller
         allSelectorsIds: function () {
